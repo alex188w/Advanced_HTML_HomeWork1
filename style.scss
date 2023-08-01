@@ -183,6 +183,125 @@ a {
     }
 }
 
+.filter {
+    width: 100%;
+    padding: 13px 16px 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+    &-box {
+        position: relative;
+        height: 40px;
+        width: 360px;
+    }
+
+    &__link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6E6E;
+        &:hover {
+            color: #F16D7F;
+          }
+    }
+
+    &__box {      
+        display: flex;      
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 11px;
+    }
+
+    &-sort {
+        padding-top: 39px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 30px;
+    }
+
+    &__summary {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 11px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    &[open] {
+        background: #FFFFFF;       
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        &  .filter__summary {
+            color: #F16D7F;
+        }
+    }
+
+    &__category {
+        margin-top: 16px;
+        &-summary {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6F6E6E;
+            padding: 8px 11px 11px;
+            border-left: 5px solid #F16D7F;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        &[open] .filter__category-summary {
+            color: #F16D7F;
+        }
+    }
+}
+
+summary::after {
+    content:url(./img/Vector1.svg);
+    padding-right: 0.5em;
+}
+
+.sort {
+    // padding-top: 65px;
+    // padding-bottom: 50px;
+    padding-left: 30px;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+
+    &__details {
+        position: relative;
+    }
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 79px;
+        padding: 7px 9px 11px;
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        z-index: 1;
+        top: 22px;
+        left: -9px;
+    }
+}
+
+.devider2 {
+    padding-bottom: 65px
+}
+
 .slider {
     @include displayMy(center);
     background-color: #F7F7F7;
@@ -200,7 +319,7 @@ a {
 
 .dashicon__left {
     position: absolute;
-    left: 10%;
+    left: 15%;
     background-color: #ddd9d9;
 
     &:hover {
@@ -210,7 +329,7 @@ a {
 
 .dashicon__right {
     position: absolute;
-    right: 10%;
+    right: 15%;
     background-color: #ddd9d9;
 
     &:hover {
@@ -263,8 +382,9 @@ a {
             width: 212px;
             height: 50px;
             @include displayMy(flex-start);
-            gap: 25px;
+            gap: 25px;            
             padding-left: 25px;
+            margin-top: 50px;
             margin-bottom: 65px;
             @include fontsMy(16px, 400, normal);
             color: #F26376;
@@ -278,41 +398,9 @@ a {
     }
 }
 
-.sort {
-    padding-top: 65px;
-    padding-bottom: 50px;
-    display: flex;
-    gap: 28px;
-    align-items: center;
-
-    &__details {
-        position: relative;
-    }
-
-    &__summary {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    &__content {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        width: 79px;
-        padding: 7px 9px 11px;
-        background: #FFFFFF;
-        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-        z-index: 1;
-        top: 22px;
-        left: -9px;
-    }
-}
-
 .top-content {
     padding-top: 130px;
-    padding-bottom: 130px;
+    // padding-bottom: 130x;
     display: grid;
     grid-template-columns: repeat(auto-fit, 360px);
     gap: 30px;
@@ -377,6 +465,7 @@ a {
     @include displayMy(center);
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 130px;
     background-size: cover;
     background-image: url("img/subscribe.jpg");
 
